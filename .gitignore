@@ -1,11 +1,20 @@
+# macOS
 .DS_Store
+
+# Python
 .venv/
 venv/
 __pycache__/
+
+# Sphinx build artifacts
 docs/build/
 _templates/
+
+# その他
 make.bat
 Makefile
 style.scss
 style.css.map
-.idea
+
+# JetBrains IDE (PyCharm, WebStorm, etc.)
+.idea/
