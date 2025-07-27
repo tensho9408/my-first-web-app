@@ -16,8 +16,8 @@
 .. raw:: html
 
    <div class="gantt-buttons">
-     <button onclick="renderGantt('week')">週表示</button>
-     <button onclick="renderGantt('month')">月表示</button>
+     <button id="btn-week">週表示</button>
+     <button id="btn-month">月表示</button>
    </div>
    <div id="mermaid-chart" class="mermaid-scroll"></div>
 

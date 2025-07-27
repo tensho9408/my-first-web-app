@@ -22,6 +22,7 @@ class Main {
 
     // Mermaid の設定と初回描画を実行
     this.initMermaid();
+    this.initButtons(); // ← ボタンイベントのバインド
     this.render("week"); // デフォルトは週表示
   }
 
@@ -60,16 +61,23 @@ class Main {
     this.container.innerHTML = `<pre class="mermaid">${code}</pre>`;
     mermaid.run(); // Mermaid を再解析して描画
   }
+
+  // ボタンクリックイベントを登録する（HTML 側の ID に依存）
+  initButtons() {
+    const weekBtn = document.getElementById("btn-week");
+    const monthBtn = document.getElementById("btn-month");
+
+    if (weekBtn) {
+      weekBtn.addEventListener("click", () => this.render("week"));
+    }
+
+    if (monthBtn) {
+      monthBtn.addEventListener("click", () => this.render("month"));
+    }
+  }
 }
 
-// グローバル変数にインスタンスを格納（デバッグや再描画用）
-window.MainApp = new Main();
-
-// HTML 側からも使えるようにグローバル関数として公開（例：onclick="renderGantt('month')"）
-window.renderGantt = function(type = "week") {
-  if (window.MainApp && typeof window.MainApp.render === "function") {
-    window.MainApp.render(type);
-  } else {
-    console.error("MainApp is not ready.");
-  }
-};
+// DOM 読み込み完了後に Main を初期化（defer が付いていれば不要）
+document.addEventListener("DOMContentLoaded", () => {
+  window.MainApp = new Main(); // グローバル参照も可能（デバッグ・開発用）
+});
