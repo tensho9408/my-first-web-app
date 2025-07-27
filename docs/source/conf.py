@@ -58,11 +58,10 @@ html_theme = "sphinx_rtd_theme"
 
 html_static_path = ['_static']
 # サイドバーに表示するロゴ画像を指定（ファイル名を適切に変更してください）
-html_logo = '_static/logo.png'
+html_logo = '_static/image/logo.png'
 # ブラウザのタブアイコンにする場合
 html_css_files = [
-    'css/style.css',
-    'css/custom.css'
+    'css/style/style.css',
 ]
 
 html_js_files = [
