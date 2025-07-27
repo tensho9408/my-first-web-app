@@ -1,0 +1,44 @@
+.wy-nav-content {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.gantt-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.gantt-buttons > button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.gantt-buttons > button:hover {
+  background-color: #357ABD;
+}
+
+.mermaid-scroll {
+  overflow-x: auto;
+  width: 100%;
+  padding: 1.5rem;
+  background: #f5f7fa;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+#mermaid-chart {
+  margin-bottom: 15px;
+}
+#mermaid-chart .mermaid {
+  min-width: 1200px;
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=custom.css.map */

@@ -9,14 +9,23 @@
    未知の領域こそ、最大の学びの場, 今日の壁が明日の踏み台となる
 
 
-.. .. image:: _static/logo.png
-..    :align: center
-..    :width: 400px
+
+.. todo::　
+   HTML・CSSの基礎学習終了、ピクセルパーフェクト学習を始める
+
+.. raw:: html
+
+   <div class="gantt-buttons">
+     <button onclick="renderGantt('week')">週表示</button>
+     <button onclick="renderGantt('month')">月表示</button>
+   </div>
+   <div id="mermaid-chart" class="mermaid-scroll"></div>
+
 
 
 .. toctree::
    :maxdepth: 2
    :caption: 目次:
 
-   chapters/day1
 
+   chapters/day1

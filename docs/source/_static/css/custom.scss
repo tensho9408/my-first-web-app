@@ -1,0 +1,53 @@
+// _static/scss/custom.scss
+
+$primary-color: #4a90e2;
+$primary-hover: #357ABD;
+$button-radius: 6px;
+$scroll-bg: #f5f7fa;
+
+.wy-nav-content {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.gantt-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  > button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: $button-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+}
+
+.mermaid-scroll {
+  overflow-x: auto;
+  width: 100%;
+  padding: 1.5rem;
+  background: $scroll-bg;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+#mermaid-chart {
+  margin-bottom: 15px;
+  .mermaid {
+  min-width: 1200px;
+  font-size: 1.2rem;
+}
+
+}
+
