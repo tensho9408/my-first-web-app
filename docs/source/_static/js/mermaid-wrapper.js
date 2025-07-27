@@ -1,47 +1,21 @@
+// _static/js/mermaid-wrapper.js
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof mermaid === "undefined") {
     console.error("Mermaid is not loaded.");
     return;
   }
 
-  const ganttData = {
-    week: `
-      gantt
-        title 学習ロードマップ（週表示）
-        dateFormat  YYYY-MM-DD
-        axisFormat  %m/%d
-        tickInterval 7day
+  if (typeof window.ganttData === "undefined") {
+    console.error("ganttData is not loaded.");
+    return;
+  }
 
-        section フロントエンド
-        HTML/CSS 　　　 :a1, 2025-07-06, 14d
-        JavaScript     :a2, 2025-07-27, 2025-08-17
-        
-
-        section バックエンド
-        Python/Django  :b1, 2025-08-03, 2025-09-07
-    `,
-    month: `
-      gantt
-        title 学習ロードマップ（月表示）
-        dateFormat  YYYY-MM-DD
-        axisFormat  %Y-%m
-        tickInterval 1month
-
-        section フロントエンド
-        HTML/CSS       :a1, 2025-07-06, 2025-07-20
-        JavaScript     :a2, after a1, 2025-07-27
-
-
-        section バックエンド
-        Python/Django  :b1, 2025-08-03, 2025-09-07
-    `
-  };
-
+  // Mermaid Gantt を描画する関数
   window.renderGantt = function (type = "week") {
     const container = document.getElementById("mermaid-chart");
     if (!container) return;
 
-    const code = ganttData[type];
+    const code = window.ganttData[type];
     if (!code) {
       console.error("Mermaid Gantt code is undefined for type:", type);
       return;
@@ -51,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mermaid.run();  // ← innerHTML に挿入された mermaid を再解析
   };
 
+  // Mermaid 初期設定
   mermaid.initialize({
     startOnLoad: false, // 自動で描画せず、明示的に renderGantt() で描画
     theme: "base",      // Mermaid のテーマ、 "dark"、"forest"、"neutral"、"default"、"base"
@@ -74,6 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
+  // 初回描画（週表示）
   renderGantt("week");
 });

@@ -18,3 +18,9 @@ style.css.map
 
 # JetBrains IDE (PyCharm, WebStorm, etc.)
 .idea/
+
+# Python スクリプト、Excel、Shell スクリプトを無視
+docs/*.py
+docs/*.xlsx
+docs/*.sh
+docs/*.command

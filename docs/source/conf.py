@@ -66,8 +66,9 @@ html_css_files = [
 ]
 
 html_js_files = [
-    "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js",
-    "js/mermaid-wrapper.js"
+    "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js",  # Mermaid 本体
+    "data/gantt-data.js",  # ← 分離したデータファイル
+    "js/mermaid-wrapper.js"  # Mermaid を描画する処理
 ]
 
 
