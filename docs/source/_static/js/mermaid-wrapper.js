@@ -1,54 +1,61 @@
 // _static/js/mermaid-wrapper.js
-document.addEventListener("DOMContentLoaded", () => {
-  if (typeof mermaid === "undefined") {
-    console.error("Mermaid is not loaded.");
-    return;
-  }
 
-  if (typeof window.ganttData === "undefined") {
-    console.error("ganttData is not loaded.");
-    return;
-  }
-
-  // Mermaid Gantt を描画する関数
-  window.renderGantt = function (type = "week") {
-    const container = document.getElementById("mermaid-chart");
-    if (!container) return;
-
-    const code = window.ganttData[type];
-    if (!code) {
-      console.error("Mermaid Gantt code is undefined for type:", type);
+class Main {
+  constructor() {
+    if (typeof mermaid === "undefined") {
+      console.error("Mermaid is not loaded.");
       return;
     }
 
-    container.innerHTML = `<pre class="mermaid">${code}</pre>`;
-    mermaid.run();  // ← innerHTML に挿入された mermaid を再解析
-  };
-
-  // Mermaid 初期設定
-  mermaid.initialize({
-    startOnLoad: false, // 自動で描画せず、明示的に renderGantt() で描画
-    theme: "base",      // Mermaid のテーマ、 "dark"、"forest"、"neutral"、"default"、"base"
-
-    themeVariables: {
-      fontFamily: "Fira Code, sans-serif",
-      fontSize: "16px",           // チャート全体のフォントサイズ
-      primaryColor: "#f9c74f",    // タスクバーのメイン色（黄色）
-      primaryTextColor: "#000000",// タスクの文字色（黒）
-      background: "#ffffff",      // チャート全体の背景色（白）
-      todayLineColor: "#ff0000",  // 今日の縦線の色（赤）
-      todayLineWidth: 2,          // 今日の縦線の太さ（px）
-      edgeLabelBackground: "#e8e8e8",
-      taskTextLightColor: "#fff",   // テキストが暗背景のときの色
-      taskTextOutsideColor: "#000", // タスク外に出たテキストの色
-      gridColor: "#dddddd",         // チャートのグリッド線
-    },
-
-    gantt: {
-      axisFormat: "%m/%d" // 日付の軸フォーマット（例：07/27）
+    if (typeof window.ganttData === "undefined") {
+      console.error("ganttData is not loaded.");
+      return;
     }
-  });
 
-  // 初回描画（週表示）
-  renderGantt("week");
-});
+    this.container = document.getElementById("mermaid-chart");
+    if (!this.container) {
+      console.warn("Mermaid chart container not found.");
+      return;
+    }
+
+    this.initMermaid();
+    this.render("week");
+  }
+
+  initMermaid() {
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "base",
+      themeVariables: {
+        fontFamily: "Fira Code, sans-serif",
+        fontSize: "16px",
+        primaryColor: "#f9c74f",
+        primaryTextColor: "#000000",
+        background: "#ffffff",
+        todayLineColor: "#ff0000",
+        todayLineWidth: 2,
+        edgeLabelBackground: "#e8e8e8",
+        taskTextLightColor: "#fff",
+        taskTextOutsideColor: "#000",
+        gridColor: "#dddddd",
+      },
+      gantt: {
+        axisFormat: "%m/%d"
+      }
+    });
+  }
+
+  render(type = "week") {
+    const code = window.ganttData[type];
+    if (!code) {
+      console.error(`Gantt code not found for type: ${type}`);
+      return;
+    }
+
+    this.container.innerHTML = `<pre class="mermaid">${code}</pre>`;
+    mermaid.run();
+  }
+}
+
+// `defer` 付き script で読み込まれた場合、DOMContentLoaded は不要
+window.MainApp = new Main();
