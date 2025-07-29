@@ -6,12 +6,10 @@
 学習日記
 ========================
 
-   未知の領域こそ、最大の学びの場, 今日の壁が明日の踏み台となる
-
-
+未知の領域こそ、最大の学びの場, 今日の壁が明日の踏み台となる
 
 .. todo::　
-   HTML・CSSの基礎学習終了、ピクセルパーフェクト学習を始める
+   HTML・CSSの基礎学習終了、ProFac受講開始
 
 .. raw:: html
 
@@ -21,11 +19,10 @@
    </div>
    <div id="mermaid-chart" class="mermaid-scroll"></div>
 
-
-
 .. toctree::
-   :maxdepth: 2
-   :caption: 目次:
+   :maxdepth: 1
+   :caption: 目次
 
+   chapters/roadmap/index
 
-   chapters/day1
+　　
