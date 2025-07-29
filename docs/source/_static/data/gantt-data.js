@@ -5,17 +5,21 @@ window.ganttData = {
       title 学習ロードマップ（週表示）
       dateFormat  YYYY-MM-DD
       axisFormat  %m/%d
-      tickInterval 7day
+      tickInterval 1day
+
+      section 基礎知識
+      環境構築  :b1, 2025-07-28, 2025-07-29
+      Github操作  :c1, 2025-07-29, 2025-07-30
+      エンジニア入門  :c2, 2025-07-28, 2025-07-29
+
+      section 課題
+      ロードマップ整理  :d1, 2025-07-28, 2025-07-31
 
       section フロントエンド
-      HTML/CSS  :a1, 2025-07-06, 14d
-      JavaScript  :a2, 2025-07-27, 2025-08-17
+      HTML/CSS  :e1, 2025-07-30, 2025-08-04
 
-      section その他
-      Github  :a4, 2025-07-20, 2025-07-22
-
-      section ツール
-      SVN  :a7, 2025-07-22, 2025-07-25
+      section 応用
+      Github応用  :f1, 2025-07-29, 2025-07-30
 
   `,
   "month": `
@@ -25,12 +29,8 @@ window.ganttData = {
       axisFormat  %Y-%m
       tickInterval 1month
 
-      section バックエンド
-      Python/Django  :b1, 2025-08-03, 2025-09-07
-
-      section フロントエンド
-      Next  :a3, 2025-08-20, 2025-09-22
-      Python/Django  :b2, 2025-08-03, 2025-09-21
+      section スクール
+      受講期間  :a1, 2025-07-28, 2025-11-28
 
   `
 };

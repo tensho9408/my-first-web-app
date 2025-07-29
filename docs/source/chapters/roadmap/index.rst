@@ -10,6 +10,7 @@
    background/index
    current/index
    goal/index
+   goal/plan
 
 
 
