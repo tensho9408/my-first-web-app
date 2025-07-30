@@ -19,17 +19,19 @@
    </div>
    <div id="mermaid-chart" class="mermaid-scroll"></div>
 
-   <!-- OpenWidget Visitor Counter -->
-   <div id="openwidget-counter" style="position: fixed; top: 10px; right: 10px; z-index: 9999;"></div>
-   <script async defer src="https://openwidget.com/widget.js"></script>
-   <script>
-     window.openwidget = window.openwidget || [];
-     window.openwidget.push({
-       selector: "#openwidget-counter",
-       widget: "visitor-counter",
-       siteId: "846bc71a-4979-4c0c-84fd-565334b76225"
-     });
-   </script>
+   <div style="
+     position: fixed;
+     top: 0px;
+     right: 10px;
+     z-index: 9999;
+     transform: scale(1);
+     transform-origin: top right;
+     opacity: 0.9;
+   ">
+     <a href='http://www.freevisitorcounters.com'>here</a>
+      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=1513e8c3577ce85cf7b249896daa3b658e701b03'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1371132/t/1"></script>
+   </div>
 
 .. toctree::
    :maxdepth: 1
@@ -38,5 +40,3 @@
    chapters/roadmap/index
 
 　　
-
-
