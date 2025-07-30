@@ -19,6 +19,20 @@
    </div>
    <div id="mermaid-chart" class="mermaid-scroll"></div>
 
+   <div style="
+     position: fixed;
+     top: 0px;
+     right: 10px;
+     z-index: 9999;
+    transform: scale(1);
+     transform-origin: top right;
+     opacity: 0.9;
+   ">
+     <a href="http://www.freevisitorcounters.com" target="_blank">here</a>
+     <script src="https://www.freevisitorcounters.com/auth.php?id=2827581aa59df55c6f99605a32c7da4b1e9e583a"></script>
+     <script src="https://www.freevisitorcounters.com/en/home/counter/1371100/t/1"></script>
+   </div>
+
 .. toctree::
    :maxdepth: 1
    :caption: 目次

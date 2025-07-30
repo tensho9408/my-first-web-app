@@ -64,10 +64,16 @@ html_css_files = [
     'css/style/style.css',
 ]
 
+# html_context = {
+#     "display_github": False,
+# }
+
+
 html_js_files = [
     ("https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js", {"defer": "defer"}),
     ("data/gantt-data.js", {"defer": "defer"}),
     ("js/mermaid-wrapper.js", {"defer": "defer"}),
+
 ]
 
 
