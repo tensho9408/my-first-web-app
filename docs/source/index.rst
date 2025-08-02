@@ -13,16 +13,21 @@
 
 .. raw:: html
 
-   <div class="gantt-buttons">
-     <button id="btn-week">週表示</button>
-     <button id="btn-month">月表示</button>
-   </div>
-   <div id="mermaid-chart" class="mermaid-scroll"></div>
+    <div class="gantt-container">
+  　　<div class="controls">
+    　　<button id="btn-week" class="gantt-btn active">週表示</button>
+    　　<button id="btn-month" class="gantt-btn">月表示</button>
+  　　</div>
+     <div id="mermaid-chart" class="mermaid-scroll"></div>
+    </div>
+
 
 .. toctree::
    :maxdepth: 1
    :caption: 目次
 
    chapters/roadmap/index
+
+
 
 　　

@@ -30,7 +30,10 @@ class Main {
   initMermaid() {
     mermaid.initialize({
       startOnLoad: false, // 明示的に描画関数を呼び出す
+      securityLevel: 'loose',
+      // theme: 'default',
       theme: "base",
+
       themeVariables: {
         fontFamily: "Fira Code, sans-serif",
         fontSize: "16px",               // 全体のフォントサイズ
@@ -45,7 +48,10 @@ class Main {
         gridColor: "#dddddd"            // グリッド線の色
       },
       gantt: {
-        axisFormat: "%m/%d" // 軸の日付フォーマット
+        axisFormat: "%m/%d", // 軸の日付フォーマット
+          barHeight: 20,
+      barGap: 4
+
       }
     });
   }
@@ -75,6 +81,7 @@ class Main {
       monthBtn.addEventListener("click", () => this.render("month"));
     }
   }
+
 }
 
 // DOM 読み込み完了後に Main を初期化（defer が付いていれば不要）
