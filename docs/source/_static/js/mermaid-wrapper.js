@@ -106,7 +106,7 @@ class Main {
                     : `${task.start}〜${task.end}`;
                 const baseText = `${dateText} : [${task.section}] ${task.name}`;
 
-                // メモがあれば <details> タグで展開表示
+                // メモがあれば <details> タグで展開表示、からの場合非表示
                 if (task.note) {
                     return `
                         <li>
