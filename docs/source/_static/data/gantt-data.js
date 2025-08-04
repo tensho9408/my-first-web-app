@@ -76,7 +76,7 @@ window.doneTasks =
     "critical": false,
     "progress": 0,
     "milestone": false,
-    "note": "ロードマップの課題提出に向けて、sphinxのライブライブを使用し、ブログ風に作成した。Github ActionとCI・CDの構築などに触れられて勉強になった。"
+    "note": "ロードマップの課題提出に向けて、sphinxのライブラリを使用し、ブログ風に作成した。Github ActionとCI・CDの構築などに触れられて勉強になった。"
   },
   {
     "id": "d1",
@@ -100,7 +100,7 @@ window.doneTasks =
     "critical": false,
     "progress": 0,
     "milestone": false,
-    "note": "新規ブランチの作成からマージンまで操作できるようになった。また、慣れてきたのかターミナルから操作する方が楽に感じる。"
+    "note": "新規ブランチの作成からマージンまで操作できるようになった。また、慣れてきたのかターミナルから操作する方がGUIの画面操作より楽に感じる。"
   }
 ]
 ;
