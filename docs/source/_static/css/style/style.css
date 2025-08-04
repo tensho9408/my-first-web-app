@@ -171,12 +171,46 @@
   border-color: #4CAF50;
 }
 
+#done-task-log ul {
+  /* ● を消す */
+  padding-left: 0;
+  /* 左インデント削除 */
+  margin-left: 0;
+  /* マージンも削除 */
+}
+
+#done-task-log li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 0.5em;
+}
+
+#done-task-log li {
+  margin-bottom: 0.5em;
+}
+
+#done-task-log details summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#done-task-log .note {
+  margin-left: 1.5em;
+  color: #666;
+}
+
+#mermaid-chart,
+.mermaid-scroll {
+  background-color: #ffffff !important;
+}
+
 .mermaid-scroll {
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
   padding: 1.5rem;
-  background: #f5f7fa;
+  background: #020203;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
   white-space: nowrap;
