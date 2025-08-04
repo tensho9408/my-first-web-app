@@ -20,50 +20,48 @@ class Main {
             return;
         }
 
-        // Mermaid の設定と初回描画を実行
+        // 初期化処理
         this.initMermaid();
-        this.initButtons(); // ← ボタンイベントのバインド
-        this.render("week"); // デフォルトは週表示
+        this.initButtons();        // 表示切替ボタン
+        this.render("week");       // デフォルト：週表示
+        this.initDoneTaskLog();    // 完了タスク履歴ボタン
     }
 
-    // Mermaid の初期設定（テーマやスタイルなど）
+    // Mermaid の設定（テーマやスタイル）
     initMermaid() {
         mermaid.initialize({
-            startOnLoad: false, // 明示的に描画関数を呼び出す
+            startOnLoad: false,
             securityLevel: 'loose',
-            // theme: 'default',
             theme: "base",
-
             themeVariables: {
                 sectionFontSize: "14px",
                 sectionFontFamily: "Fira Code, sans-serif",
                 sectionMargin: 10,
                 fontFamily: "Fira Code, sans-serif",
-                fontSize: "16px",               // 全体のフォントサイズ
-                primaryColor: "#f9c74f",        // タスクバーの色
-                primaryTextColor: "#000000",    // テキスト色
-                background: "#ffffff",          // 背景色
-                todayLineColor: "#ff0000",      // 今日を示す線の色
-                todayLineWidth: 2,              // 今日線の太さ
-                edgeLabelBackground: "#e8e8e8", // ラベルの背景
-                taskTextLightColor: "#fff",     // 明るい背景のテキスト色
-                taskTextOutsideColor: "#000",   // タスク外テキストの色
-                gridColor: "#dddddd"            // グリッド線の色
+                fontSize: "16px",
+                primaryColor: "#f9c74f",
+                primaryTextColor: "#000000",
+                background: "#ffffff",
+                todayLineColor: "#ff0000",
+                todayLineWidth: 2,
+                edgeLabelBackground: "#e8e8e8",
+                taskTextLightColor: "#fff",
+                taskTextOutsideColor: "#000",
+                gridColor: "#dddddd"
             },
             gantt: {
                 axisFormat: "%m/%d",
                 barHeight: 20,
                 barGap: 4,
                 topPadding: 50,
-                leftPadding: 150,       // ← セクション表示部分の幅を広く
+                leftPadding: 150,
                 rightPadding: 100,
-                useMaxWidth: false      // ← Mermaid の自動縮小を抑制
-
+                useMaxWidth: false
             }
         });
     }
 
-    // Gantt チャートを描画する
+    // Mermaid Gantt チャートの描画処理
     render(type = "week") {
         const code = window.ganttData[type];
         if (!code) {
@@ -72,10 +70,10 @@ class Main {
         }
 
         this.container.innerHTML = `<pre class="mermaid">${code}</pre>`;
-        mermaid.run(); // Mermaid を再解析して描画
+        mermaid.run(); // Mermaid 再描画
     }
 
-    // ボタンクリックイベントを登録する（HTML 側の ID に依存）
+    // 表示切替ボタンのイベント設定
     initButtons() {
         const weekBtn = document.getElementById("btn-week");
         const monthBtn = document.getElementById("btn-month");
@@ -89,11 +87,47 @@ class Main {
         }
     }
 
+    // 完了タスク履歴の表示処理（noteがあれば展開式で表示）
+    initDoneTaskLog() {
+        const btn = document.getElementById("show-done-tasks");
+        const log = document.getElementById("done-task-log");
+
+        if (!btn || !log || !Array.isArray(window.doneTasks)) return;
+
+        btn.addEventListener("click", () => {
+            if (log.style.display === "block") {
+                log.style.display = "none";
+                return;
+            }
+
+            const items = window.doneTasks.map(task => {
+                const dateText = task.start === task.end
+                    ? task.start
+                    : `${task.start}〜${task.end}`;
+                const baseText = `${dateText} : [${task.section}] ${task.name}`;
+
+                // メモがあれば <details> タグで展開表示
+                if (task.note) {
+                    return `
+                        <li>
+                        <details>
+                            <summary>${baseText}</summary>
+                            <div style="margin-left: 1em; color: #666;">📝 ${task.note}</div>
+                        </details>
+                        </li>`;
+                } else {
+                    return `<li>${baseText}</li>`;
+                }
+
+            }).join("");
+
+            log.innerHTML = `<ul>${items}</ul>`;
+            log.style.display = "block";
+        });
+    }
 }
 
-// DOM 読み込み完了後に Main を初期化（defer が付いていれば不要）
+// DOM 読み込み後に Main を初期化
 document.addEventListener("DOMContentLoaded", () => {
-    window.MainApp = new Main(); // グローバル参照も可能（デバッグ・開発用）
+    window.MainApp = new Main();
 });
-
-

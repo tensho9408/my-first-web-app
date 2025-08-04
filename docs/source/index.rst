@@ -13,13 +13,17 @@
 
 .. raw:: html
 
-    <div class="gantt-container">
-  　　<div class="controls">
-    　　<button id="btn-week" class="gantt-btn active">週表示</button>
-    　　<button id="btn-month" class="gantt-btn">月表示</button>
-  　　</div>
-     <div id="mermaid-chart" class="mermaid-scroll"></div>
-    </div>
+   <div class="gantt-container">
+      <div class="controls">
+         <button id="btn-week" class="gantt-btn active">週表示</button>
+         <button id="btn-month" class="gantt-btn">月表示</button>
+         <button id="show-done-tasks" class="gantt-btn inview">完了</button>
+   </div>
+      <div id="mermaid-chart" class="mermaid-scroll"></div>
+      <div id="done-task-log" style="display:none; margin-top: 1em;"></div>
+   </div>
+
+
 
 
 .. toctree::

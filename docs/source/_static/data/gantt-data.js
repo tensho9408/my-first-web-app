@@ -7,29 +7,23 @@ window.ganttData = {
       axisFormat  %m/%d
       tickInterval 1day
 
-      section 基礎知識
-      環境構築 : done, b1, 2025-07-28, 2025-07-29
-      Github操作 : done, c1, 2025-07-29, 2025-07-30
-      エンジニア入門 : done, c2, 2025-07-28, 2025-07-29
+      section フロントエンド
+      HTML/CSS（90%） : active, e1, 2025-07-30, 2025-08-04
       JavaScript入門 : c6, 2025-08-04, 2025-08-06
       JavaScript入門 : c6, 2025-08-11, 2025-08-14
 
-      section 課題
-      ロードマップ整理 : done, d1, 2025-07-28, 2025-07-31
-
-      section フロントエンド
-      HTML/CSS（90%） : active, e1, 2025-07-30, 2025-08-04
-
-      section 応用
-      Github応用 : done, f1, 2025-07-29, 2025-07-30
-
       section 基礎知識（独学）
-      Linux基礎（10%） : active, c3, 2025-08-03, 2025-08-05
-      Docker基礎 : c4, 2025-08-05, 2025-08-07
-      Github練習 : c5, 2025-08-07, 2025-08-09
+      Linux基礎（10%） : active, c3, 2025-08-06, 2025-08-08
+      Docker基礎 : c4, 2025-08-07, 2025-08-09
+      Github練習 : c5, 2025-08-08, 2025-08-09
+      アルゴリズム入門 : c7, 2025-08-09, 2025-08-13
 
       section マイルストーン
       広州 : milestone, m1, 2025-08-05, 0d
+
+      section 復習
+      CSS : r1, 2025-08-09, 2025-08-10
+      ロードマップ整理 : r1, 2025-08-08, 2025-08-10
 
   `,
   "month": `
@@ -44,3 +38,69 @@ window.ganttData = {
 
   `
 };
+
+// Done tasks for history log
+window.doneTasks = 
+[
+  {
+    "id": "b1",
+    "name": "環境構築",
+    "section": "基礎知識",
+    "start": "2025-07-28",
+    "end": "29",
+    "status": "done",
+    "critical": false,
+    "progress": 0,
+    "milestone": false,
+    "note": "統合環境の使用はVSが王道。"
+  },
+  {
+    "id": "c1",
+    "name": "Github操作",
+    "section": "基礎知識",
+    "start": "2025-07-29",
+    "end": "30",
+    "status": "done",
+    "critical": false,
+    "progress": 0,
+    "milestone": false,
+    "note": "リポジトリとGitHubの設定、SSH秘密鍵の設定が難しかった。"
+  },
+  {
+    "id": "c2",
+    "name": "エンジニア入門",
+    "section": "基礎知識",
+    "start": "2025-07-28",
+    "end": "29",
+    "status": "done",
+    "critical": false,
+    "progress": 0,
+    "milestone": false,
+    "note": "ロードマップの課題提出に向けて、sphinxのライブライブを使用し、ブログ風に作成した。Github ActionとCI・CDの構築などに触れられて勉強になった。"
+  },
+  {
+    "id": "d1",
+    "name": "ロードマップ整理",
+    "section": "課題",
+    "start": "2025-07-28",
+    "end": "31",
+    "status": "done",
+    "critical": false,
+    "progress": 0,
+    "milestone": false,
+    "note": "今後学習内容のまとめなど追加していく"
+  },
+  {
+    "id": "f1",
+    "name": "Github応用",
+    "section": "応用",
+    "start": "2025-07-29",
+    "end": "30",
+    "status": "done",
+    "critical": false,
+    "progress": 0,
+    "milestone": false,
+    "note": "新規ブランチの作成からマージンまで操作できるようになった。また、慣れてきたのかターミナルから操作する方が楽に感じる。"
+  }
+]
+;
