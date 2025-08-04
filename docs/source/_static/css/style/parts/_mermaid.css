@@ -10,7 +10,8 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-.gantt-buttons > button {
+
+.gantt-buttons>button {
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
   background-color: #4a90e2;
@@ -20,25 +21,32 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.gantt-buttons > button:hover {
+
+.gantt-buttons>button:hover {
   background-color: #357ABD;
 }
 
 .mermaid-scroll {
   overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
   padding: 1.5rem;
   background: #f5f7fa;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
 }
 
 #mermaid-chart {
   margin-bottom: 15px;
 }
+
 #mermaid-chart .mermaid {
-  min-width: 1200px;
+  min-width: 1600px;
+  /* ← 1200pxより広く */
   font-size: 1.2rem;
+  overflow-x: auto;
 }
+
 
 /*# sourceMappingURL=custom.css.map */

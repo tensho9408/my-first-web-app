@@ -14,7 +14,7 @@
   border: 1px solid #eee;
   border-radius: 8px;
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* コントロールボタン */
@@ -44,55 +44,56 @@
   border-color: #4CAF50;
 }
 
-/* チャート表示領域 */
-#mermaid-chart {
-  min-height: 500px;
-  overflow: auto;
-}
 
 .mermaid-scroll {
   overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
   padding: 1.5rem;
-  background: $scroll-bg;
+  background: #f5f7fa;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
 }
 
 #mermaid-chart {
   margin-bottom: 15px;
+
   .mermaid {
-  min-width: 1200px;
-  font-size: 1.2rem;
+    min-width: 1600px;
+    /* ← 1200pxより広く */
+    font-size: 1.2rem;
+    overflow-x: auto;
   }
 }
 
 /* 基本スタイル */
 .mermaid .task {
-    stroke-width: 2px;
+  stroke-width: 2px;
 }
 
 /* 完了タスク */
 .task.done0 {
-   fill: #e0e0e0 !important;
+  fill: #e0e0e0 !important;
   stroke: #999 !important;
-  stroke-dasharray: 4, 2 !important; /* ← 点線にする */
+  stroke-dasharray: 4, 2 !important;
+  /* ← 点線にする */
   //filter: drop-shadow(0 0 2px #aaa);
   //stroke-width: 3px !important;
 }
 
 /* 進行中タスク */
 .task.active {
-    fill: #bbdefb !important;
-    stroke: #7cb342 !important;
+  fill: #bbdefb !important;
+  stroke: #7cb342 !important;
 }
 
 /* マイルストーン - 修正版 */
 .milestone {
-    fill: #bbdefb !important;
-    stroke: #2196f3 !important;
-    stroke-width: 3px;
-    shape-rendering: geometricPrecision;
+  fill: #bbdefb !important;
+  stroke: #2196f3 !important;
+  stroke-width: 3px;
+  shape-rendering: geometricPrecision;
 }
 
 /* クリティカルタスク */

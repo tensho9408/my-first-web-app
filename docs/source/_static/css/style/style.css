@@ -173,27 +173,25 @@
   border-color: #4CAF50;
 }
 
-/* チャート表示領域 */
-#mermaid-chart {
-  min-height: 500px;
-  overflow: auto;
-}
-
 .mermaid-scroll {
   overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
   padding: 1.5rem;
   background: #f5f7fa;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
 }
 
 #mermaid-chart {
   margin-bottom: 15px;
 }
 #mermaid-chart .mermaid {
-  min-width: 1200px;
+  min-width: 1600px;
+  /* ← 1200pxより広く */
   font-size: 1.2rem;
+  overflow-x: auto;
 }
 
 /* 基本スタイル */
@@ -205,7 +203,8 @@
 .task.done0 {
   fill: #e0e0e0 !important;
   stroke: #999 !important;
-  stroke-dasharray: 4, 2 !important; /* ← 点線にする */
+  stroke-dasharray: 4, 2 !important;
+  /* ← 点線にする */
 }
 
 /* 進行中タスク */
@@ -231,6 +230,4 @@
 
 .admonition-title {
   display: none;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
