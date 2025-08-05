@@ -1,0 +1,148 @@
+@use "../globals" as *;
+
+.wy-nav-content {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+/* ガントチャートコンテナ */
+.gantt-container {
+  width: 100%;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* コントロールボタン */
+.controls {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.gantt-btn {
+  padding: 8px 16px;
+  margin: 0 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  &.gantt-btn.active {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+  }
+
+  // &.inview {
+  //   background-color: black;
+  // }
+}
+
+
+#done-task-log ul {
+
+  /* ● を消す */
+  padding-left: 0;
+  /* 左インデント削除 */
+  margin-left: 0;
+  /* マージンも削除 */
+}
+
+#done-task-log li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 0.5em;
+}
+
+
+#done-task-log li {
+  margin-bottom: 0.5em;
+}
+
+#done-task-log details summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#done-task-log .note {
+  margin-left: 1.5em;
+  color: #666;
+}
+
+
+
+#mermaid-chart,
+.mermaid-scroll {
+  background-color: #ffffff !important;
+}
+
+
+
+.mermaid-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  padding: 1.5rem;
+  background: #020203;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+#mermaid-chart {
+  margin-bottom: 15px;
+
+  .mermaid {
+    min-width: 1600px;
+    /* ← 1200pxより広く */
+    font-size: 1.2rem;
+    overflow-x: auto;
+  }
+}
+
+/* 基本スタイル */
+.mermaid .task {
+  stroke-width: 2px;
+}
+
+/* 完了タスク */
+.task.done0 {
+  fill: #e0e0e0 !important;
+  stroke: #999 !important;
+  stroke-dasharray: 4, 2 !important;
+  /* ← 点線にする */
+  //filter: drop-shadow(0 0 2px #aaa);
+  //stroke-width: 3px !important;
+}
+
+/* 進行中タスク */
+.task.active {
+  fill: #bbdefb !important;
+  stroke: #7cb342 !important;
+}
+
+/* マイルストーン - 修正版 */
+.milestone {
+  fill: #bbdefb !important;
+  stroke: #2196f3 !important;
+  stroke-width: 3px;
+  shape-rendering: geometricPrecision;
+}
+
+/* クリティカルタスク */
+.mermaid .task[class*="crit"] {
+  fill: #ffcdd2 !important;
+  stroke: #f44336 !important;
+  stroke-width: 2px !important;
+}

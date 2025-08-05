@@ -1,0 +1,265 @@
+@charset "UTF-8";
+.wy-side-nav-search {
+  display: block;
+  width: 300px;
+  padding: 0.809em;
+  margin-bottom: 0.809em;
+  z-index: 200;
+  background-color: slategray;
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 20%), radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 20%);
+  text-align: center;
+  color: #fcfcfc;
+}
+
+.wy-side-nav-search .logo {
+  max-height: 140px; /* 適宜変更 */
+  width: auto;
+}
+
+/* シャドウを抑えたクールなロゴアニメーション */
+/* 高度なロゴアニメーション */
+@keyframes coolLogoAnimation {
+  0% {
+    transform: rotateY(0) scale(1);
+    filter: drop-shadow(0 0 5px rgba(104, 173, 222, 0.5));
+  }
+  25% {
+    transform: rotateY(90deg) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.8));
+  }
+  50% {
+    transform: rotateY(180deg) scale(1.2);
+    filter: drop-shadow(0 0 25px rgb(199, 169, 244));
+  }
+  75% {
+    transform: rotateY(270deg) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(212, 81, 248, 0.8));
+  }
+  100% {
+    transform: rotateY(360deg) scale(1);
+    filter: drop-shadow(0 0 5px rgba(0, 150, 255, 0.5));
+  }
+}
+@keyframes gradientPulse {
+  0% {
+    background-position: 0% 50%;
+    background-size: 100% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+    background-size: 200% 200%;
+  }
+  100% {
+    background-position: 0% 50%;
+    background-size: 100% 100%;
+  }
+}
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff;
+  }
+}
+.wy-side-nav-search .logo {
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 1px;
+  background: linear-gradient(45deg, #1a2a6c, #b21f1f, #1a2a6c);
+  background-size: 200% 200%;
+  box-shadow: 0 0 25px rgba(80, 169, 204, 0.5);
+}
+
+.wy-side-nav-search .logo::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.wy-side-nav-search .logo:hover {
+  animation: coolLogoAnimation 1.8s ease-in-out, gradientPulse 3s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+.wy-side-nav-search .logo:hover::before {
+  animation: shine 1.5s ease-in-out forwards;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translateX(-100%);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+/* ロゴテキストのアニメーション */
+.wy-side-nav-search .logo .logo-text {
+  display: inline-block;
+  font-weight: bold;
+  color: white !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.wy-side-nav-search .logo:hover .logo-text {
+  animation: neonGlow 1.5s ease-in-out infinite;
+  transform: scale(1.1);
+}
+
+.wy-nav-content {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+/* ガントチャートコンテナ */
+.gantt-container {
+  width: 100%;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* コントロールボタン */
+.controls {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.gantt-btn {
+  padding: 8px 16px;
+  margin: 0 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.gantt-btn:hover {
+  background-color: #e0e0e0;
+}
+.gantt-btn.gantt-btn.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+#done-task-log ul {
+  /* ● を消す */
+  padding-left: 0;
+  /* 左インデント削除 */
+  margin-left: 0;
+  /* マージンも削除 */
+}
+
+#done-task-log li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 0.5em;
+}
+
+#done-task-log li {
+  margin-bottom: 0.5em;
+}
+
+#done-task-log details summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#done-task-log .note {
+  margin-left: 1.5em;
+  color: #666;
+}
+
+#mermaid-chart,
+.mermaid-scroll {
+  background-color: #ffffff !important;
+}
+
+.mermaid-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  padding: 1.5rem;
+  background: #020203;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+#mermaid-chart {
+  margin-bottom: 15px;
+}
+#mermaid-chart .mermaid {
+  min-width: 1600px;
+  /* ← 1200pxより広く */
+  font-size: 1.2rem;
+  overflow-x: auto;
+}
+
+/* 基本スタイル */
+.mermaid .task {
+  stroke-width: 2px;
+}
+
+/* 完了タスク */
+.task.done0 {
+  fill: #e0e0e0 !important;
+  stroke: #999 !important;
+  stroke-dasharray: 4, 2 !important;
+  /* ← 点線にする */
+}
+
+/* 進行中タスク */
+.task.active {
+  fill: #bbdefb !important;
+  stroke: #7cb342 !important;
+}
+
+/* マイルストーン - 修正版 */
+.milestone {
+  fill: #bbdefb !important;
+  stroke: #2196f3 !important;
+  stroke-width: 3px;
+  shape-rendering: geometricPrecision;
+}
+
+/* クリティカルタスク */
+.mermaid .task[class*=crit] {
+  fill: #ffcdd2 !important;
+  stroke: #f44336 !important;
+  stroke-width: 2px !important;
+}
+
+.admonition-title {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
