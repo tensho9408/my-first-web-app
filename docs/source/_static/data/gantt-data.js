@@ -7,23 +7,22 @@ window.ganttData = {
       axisFormat  %m/%d
       tickInterval 1day
 
-      section フロントエンド
-      HTML/CSS（90%） : active, e1, 2025-07-30, 2025-08-04
-      JavaScript入門 : c6, 2025-08-04, 2025-08-06
-      JavaScript入門 : c6, 2025-08-11, 2025-08-14
-
       section 基礎知識（独学）
       Linux基礎（10%） : active, c3, 2025-08-06, 2025-08-08
       Docker基礎 : c4, 2025-08-07, 2025-08-09
       Github練習 : c5, 2025-08-08, 2025-08-09
       アルゴリズム入門 : c7, 2025-08-09, 2025-08-13
 
+      section フロントエンド
+      JavaScript入門 : c6, 2025-08-04, 2025-08-06
+      JavaScript入門 : c6, 2025-08-11, 2025-08-14
+
       section 復習
       CSS : e1, 2025-08-09, 2025-08-10
       ロードマップ整理 : d1, 2025-08-08, 2025-08-10
 
       section マイルストーン
-      広州 : milestone, m1, 2025-08-05, 0d
+      広州 : milestone, m1, 2025-08-06, 0d
 
   `,
   "month": `
@@ -88,7 +87,19 @@ window.doneTasks =
     "critical": false,
     "progress": 0,
     "milestone": false,
-    "note": "今後学習内容のまとめなど追加していく"
+    "note": "今後学習内容のまとめなど追加."
+  },
+  {
+    "id": "e1",
+    "name": "HTML/CSS",
+    "section": "フロントエンド",
+    "start": "2025-07-30",
+    "end": "08-04",
+    "status": "done",
+    "critical": false,
+    "progress": 0,
+    "milestone": false,
+    "note": "Gridを使用する場合、各セクション毎に、divで一括りで囲み、横幅や縦幅を設定する。"
   },
   {
     "id": "f1",
